@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Login</title>
+            <link rel="icon" href="images\logo1.png" type="image/x-icon">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+          *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+font-family: -webkit-body;
+    font-weight: bold;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+font-size: x-large;
+    font-family: initial;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+}
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+div.logo {
+    color: #fff;
+    font-size: 0px;
+    font-weight: 600;
+}
+img.logo{
+filter: brightness(1000%);
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.bg-img{
+  background: white;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.bg-img:after{
+  position: absolute;
+  content: '';
+  top: 80px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #f6f2f2;
+}
+.content{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  padding: 60px 32px;
+  width:550px;
+  height: 450px;
+  transform: translate(-50%,-50%);
+  background: #302b2b;
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+.content header{
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  font-family: 'Times New Roman',sans-serif;
+}
+.field{
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255,255,255,0.94);
+}
+.field span{
+  color: #222;
+  width: 40px;
+  line-height: 45px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 20px;
+  font-family: 'Times New Roman',sans-serif;
+}
+.space{
+  margin-top: 16px;
+}
+
+.pass-key:valid ~ .show{
+  display: block;
+}
+.pass{
+  text-align: left;
+  margin: 10px 0;
+}
+.pass a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+}
+.pass:hover a{
+  text-decoration: underline;
+}
+.field input[type="submit"]{
+  background: #3498db;
+  border: 1px solid #2691d9;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Times New Roman',sans-serif;
+}
+.field input[type="submit"]:hover{
+  background: #2691d9;
+}
+.login{
+  color: white;
+  margin: 20px 0;
+  font-family: 'Poppins',sans-serif;
+}
+i span{
+  margin-left: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}
+.signup{
+  font-size: 15px;
+  color: white;
+  font-family: 'Poppins',sans-serif;
+}
+.signup a{
+  color: #3498db;
+  text-decoration: none;
+}
+.signup a:hover{
+  text-decoration: underline;
+}
+</style>
+
+ <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', sans-serif;
+}
+.footer {
+   position: inherit;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #1b1b1b;
+   color: white;
+   text-align: center;
+height: 300px;
+}
+p{
+padding-top: 3px;
+    font-size: x-large;
+    font-weight: 600;
+}
+hr.border{
+border: 1px solid #f12020;
+    margin-left: 450px;
+    margin-right: 450px;
+}
+.content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.content .fas:hover{
+  background: #f12020;
+}
+.content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.content .phone{
+  margin: 15px 0;
+}
+.footer .social{
+  margin: 20px 0 0 0;
+}
+.footer .social a{
+  padding: 0 2px;
+}
+.footer .social a span{
+  height: 40px;
+  width: 40px;
+  background: #302b2b;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+color: white;
+}
+.footer .social a span:hover{
+  background: #f12020;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+.footer .fas{
+  font-size: 1.4375rem;
+  background: #302b2b;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.footer .fas:hover{
+  background: #f12020;
+}
+
+</style>
+   </head>
+   <body>
+       <nav>
+         <div class="logo">
+            <img class="logo" src="images/logo.png" width="250" height="75">
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a href="index.jsp">Home</a></li>
+            <li><a href="aboutUs.jsp">About us</a></li>
+            <li><a href="register.jsp">Register</a></li>
+            <li><a class="active" href="login.html">Login</a></li>
+            <li><a href="contactUs.jsp">Contact us</a></li>
+         </ul>
+      </nav>
+
+      <div class="bg-img">
+         <div class="content">
+            <header>Login Form</header>
+            <form action="LoginCheckerServlet" method="Post">
+               <div class="field">
+                  <span class="fa fa-user" style="font-size: x-large;"></span>
+                  <input type="text"  name="username"  placeholder="Username" required="">
+               </div>
+               <div class="field space">
+                  <span class="fa fa-lock" style="font-size: x-large;"></span>
+                  <input type="password" name="password" class="pass-key" placeholder="Password" required="">
+                 
+               </div>
+                <br><br>
+               <div class="field">
+                  <input type="submit" value="LOGIN">
+               </div>
+            </form>
+            
+            <br>
+            <center style="color: white;font-size: 20px;">Not a member? <a href="register.jsp" style="color: #79c3f5;text-decoration: none;">
+                    Register now</a></center>
+         </div>
+      </div>
+    
+  
+<div class="footer">
+  <p>Address</p>
+ <hr class="border">
+  <p style="line-height: 1.5; font-size: large;font-weight: inherit;">
+          <span class="fas fa-map-marker-alt" style="color: white;"></span>Indore, Madhya Pradesh</p><br>
+              <p style="font-size: large;font-weight: inherit;"><span class="fas fa-phone-alt"></span>+089-765432100</p><br>
+              <p style="font-size: large;font-weight: inherit;"><span class="fas fa-envelope"></span>abc@example.com</p>
+         <div class="social">
+              <a href="https://www.facebook.com/"><span class="fab fa-facebook-f"></span></a>
+              <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
+              <a href="https://instagram.com/"><span class="fab fa-instagram"></span></a>
+              <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
+            </div>
+<div class="bottom" style="padding-top: 20px; background: #1b1b1b;">
+
+        <center>
+          <span class="credit">Created By <a href="index.jsp">Meals On Wheels</a> | </span>
+          <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+        </center>
+      </div>
+</div>
+       </body>
+</html>
